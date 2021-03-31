@@ -89,9 +89,9 @@ SMBIOS_TABLE_TYPE0 gSmbiosType0Template = {
   0xFF,                    // EmbeddedControllerFirmwareMinorRelease
 };
 CHAR8 *gSmbiosType0Strings[] = {
-  "http://www.tianocore.org/edk2/",     // Vendor String
-  __TIME__,                   // BiosVersion String
-  __DATE__,                   // BiosReleaseDate String
+  "American Megatrends Inc.",     // Vendor String
+  "1.50",                   // BiosVersion String
+  "03/25/2019",                   // BiosReleaseDate String
   NULL
 };
 
@@ -107,12 +107,12 @@ SMBIOS_TABLE_TYPE1 gSmbiosType1Template = {
   6,    // Family String
 };
 CHAR8  *gSmbiosType1Strings[] = {
-  "http://www.tianocore.org/edk2/",
-  "EmulatorPkg",
+  "Micro-Star International Co., Ltd.",
+  "MS-7B17",
   "1.0",
   "System Serial#",
   "System SKU#",
-  "edk2",
+  "MS-7B17",
   NULL
 };
 
@@ -138,8 +138,8 @@ SMBIOS_TABLE_TYPE2  gSmbiosType2Template = {
   { 0 }                     // ContainedObjectHandles[1];
 };
 CHAR8  *gSmbiosType2Strings[] = {
-  "http://www.tianocore.org/edk2/",
-  "EmulatorPkg",
+  "Micro-Star International Co., Ltd.",
+  "MPG Z390 GAMING PRO CARBON (MS-7B17)",
   "1.0",
   "Base Board Serial#",
   "Base Board Asset Tag#",
@@ -166,8 +166,8 @@ SMBIOS_TABLE_TYPE3  gSmbiosType3Template = {
   { { 0 } },    // ContainedElements[1];
 };
 CHAR8  *gSmbiosType3Strings[] = {
-  "http://www.tianocore.org/edk2/",
-  "EmulatorPkg",
+  "Micro-Star International Co., Ltd.",
+  "1.0",
   "Chassis Board Serial#",
   "Chassis Board Asset Tag#",
   NULL
@@ -329,7 +329,7 @@ SMBIOS_TABLE_TYPE11 gSmbiosType11Template = {
   1 // StringCount
 };
 CHAR8 *gSmbiosType11Strings[] = {
-  "https://svn.code.sf.net/p/edk2/code/trunk/edk2/EmulatorPkg/",
+  "MSICHICKENWINGS",
   NULL
 };
 
@@ -339,7 +339,7 @@ SMBIOS_TABLE_TYPE12 gSmbiosType12Template = {
   1 // StringCount
 };
 CHAR8 *gSmbiosType12Strings[] = {
-  "https://svn.code.sf.net/p/edk2/code/trunk/edk2/EmulatorPkg/EmulatorPkg.dsc",
+  "MSICHICKENWINGS",
   NULL
 };
 
@@ -394,9 +394,9 @@ SMBIOS_TABLE_TYPE17 gSmbiosType17Template = {
   0,          // ConfiguredMemoryClockSpeed;
 };
 CHAR8 *gSmbiosType17Strings[] = {
-  "OS Virtual Memory",
-  "malloc",
-  "OSV",
+  "ChannelB-DIMM1",
+  "BANK 3",
+  "859B",
   NULL
 };
 
