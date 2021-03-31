@@ -1659,7 +1659,7 @@
   ## This PCD defines the HelloWorld print string.
   #  This PCD is a sample to explain String typed PCD usage.
   # @Prompt HelloWorld print string.
-  gEfiMdeModulePkgTokenSpaceGuid.PcdHelloWorldPrintString|L"UEFI Hello World!\n"|VOID*|0x40000004
+  gEfiMdeModulePkgTokenSpaceGuid.PcdHelloWorldPrintString|L"please noo world!\n"|VOID*|0x40000004
 
   ## Indicates the maximum size of the capsule image with a reset flag that the platform can support.
   #  The default max size is 100MB (0x6400000) for more than one large capsule images.
@@ -1673,7 +1673,7 @@
 
   ## Null-terminated Unicode string of the firmware vendor name that is the default name filled into the EFI System Table.
   # @Prompt Firmware vendor.
-  gEfiMdeModulePkgTokenSpaceGuid.PcdFirmwareVendor|L"EDK II"|VOID*|0x00010050
+  gEfiMdeModulePkgTokenSpaceGuid.PcdFirmwareVendor|L"AMI B."|VOID*|0x00010050
 
   ## Firmware revision that is the default revision filled into the EFI System Table.
   # @Prompt Firmware revision.
