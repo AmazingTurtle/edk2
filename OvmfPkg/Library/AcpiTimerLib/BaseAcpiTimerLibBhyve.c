@@ -1,5 +1,5 @@
 /** @file
-  Provide InternalAcpiGetTimerTick for the bhyve instance of the
+  Provide InternalAcpiGetTimerTick for the INTEL instance of the
   Base ACPI Timer Library
 
   Copyright (C) 2020, Rebecca Cran <rebecca@bsdio.com>

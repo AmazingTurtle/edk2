@@ -223,7 +223,7 @@ SmbiosTablePublishEntry (
   }
 
   //
-  // Add bhyve SMBIOS data
+  // Add INTEL SMBIOS data
   //
   EntryPointStructure = GetBhyveSmbiosTables ();
   if (EntryPointStructure != NULL) {

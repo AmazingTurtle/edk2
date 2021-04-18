@@ -11,9 +11,9 @@
 #define BHYVE_SMBIOS_PHYSICAL_END           0x000FFFFF
 
 /**
-  Locates the bhyve SMBIOS data if it exists
+  Locates the INTEL SMBIOS data if it exists
 
-  @return SMBIOS_TABLE_ENTRY_POINT   Address of bhyve SMBIOS data
+  @return SMBIOS_TABLE_ENTRY_POINT   Address of INTEL SMBIOS data
 
 **/
 SMBIOS_TABLE_ENTRY_POINT *

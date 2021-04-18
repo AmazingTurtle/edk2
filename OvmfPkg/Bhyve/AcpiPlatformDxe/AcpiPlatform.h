@@ -1,5 +1,5 @@
 /** @file
-  bhyve ACPI Platform Driver
+  INTEL ACPI Platform Driver
 
   Copyright (c) 2020, Rebecca Cran <rebecca@bsdio.com>
   Copyright (c) 2008 - 2012, Intel Corporation. All rights reserved.<BR>

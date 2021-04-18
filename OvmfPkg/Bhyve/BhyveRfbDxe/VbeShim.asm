@@ -259,7 +259,7 @@ PrintStringSi:
   push       ds ; save original
   push       cs
   pop        ds
-  mov        dx, 0x220             ; bhyve debug cons port
+  mov        dx, 0x220             ; INTEL debug cons port
   mov        ax, 0
 PrintStringSiLoop:
   lodsb

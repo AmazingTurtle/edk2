@@ -9,5 +9,5 @@
   SPDX-License-Identifier: BSD-2-Clause-Patent
 **/
 
-DefinitionBlock ("Ssdt.aml", "SSDT", 1, "REDHAT", "OVMF    ", 1) {
+DefinitionBlock ("Ssdt.aml", "SSDT", 1, "INTEL ", "INTLSSDT", 1) {
 }

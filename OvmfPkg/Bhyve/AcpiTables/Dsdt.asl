@@ -16,13 +16,13 @@
  *     Length           0x000008FA (2298)
  *     Revision         0x02
  *     Checksum         0xC4
- *     OEM ID           "BHYVE "
- *     OEM Table ID     "BVDSDT  "
+ *     OEM ID           "INTEL "
+ *     OEM Table ID     "INTLSDT "
  *     OEM Revision     0x00000001 (1)
  *     Compiler ID      "INTL"
  *     Compiler Version 0x20150204 (538247684)
  */
-DefinitionBlock ("DSDT.aml", "DSDT", 2, "BHYVE", "BVDSDT", 0x00000001)
+DefinitionBlock ("DSDT.aml", "DSDT", 2, "INTEL", "INTLSDT", 0x00000001)
 {
     Name (_S5, Package (0x02)
     {

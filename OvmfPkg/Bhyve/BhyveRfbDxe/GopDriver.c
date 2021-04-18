@@ -108,7 +108,7 @@ EmuGopDriverBindingSupported (
 
   Status = EFI_UNSUPPORTED;
   if (Pci.Hdr.VendorId == 0xFB5D && Pci.Hdr.DeviceId == 0x40FB) {
-    DEBUG((DEBUG_INFO, "BHYVE framebuffer device detected\n"));
+    DEBUG((DEBUG_INFO, "INTEL framebuffer device detected\n"));
     Status = EFI_SUCCESS;
 
     BhyveGetGraphicsMode(PciIo, &Width, &Height, &Depth);
@@ -225,9 +225,9 @@ EmuGopDriverBindingStart (
                       );
   if (EFI_ERROR (Status) ||
       MmioDesc->ResType != ACPI_ADDRESS_SPACE_TYPE_MEM) {
-    DEBUG ((DEBUG_INFO, "BHYVE GOP: No mmio bar\n"));
+    DEBUG ((DEBUG_INFO, "INTEL GOP: No mmio bar\n"));
   } else {
-    DEBUG ((DEBUG_INFO, "BHYVE GOP: Using mmio bar @ 0x%lx\n",
+    DEBUG ((DEBUG_INFO, "INTEL GOP: Using mmio bar @ 0x%lx\n",
             MmioDesc->AddrRangeMin));
     BhyveGetMemregs(Private, &Memregs);
     Private->FbSize = Memregs.FbSize;
@@ -251,9 +251,9 @@ EmuGopDriverBindingStart (
                       );
   if (EFI_ERROR (Status) ||
       MmioDesc->ResType != ACPI_ADDRESS_SPACE_TYPE_MEM) {
-    DEBUG ((DEBUG_INFO, "BHYVE GOP: No frame-buffer bar\n"));
+    DEBUG ((DEBUG_INFO, "INTEL GOP: No frame-buffer bar\n"));
   } else {
-    DEBUG ((DEBUG_INFO, "BHYVE GOP: Using frame-buffer bar @ 0x%lx\n",
+    DEBUG ((DEBUG_INFO, "INTEL GOP: Using frame-buffer bar @ 0x%lx\n",
             MmioDesc->AddrRangeMin));
     Private->FbAddr = MmioDesc->AddrRangeMin;
     // XXX assert BAR is >= size
@@ -266,7 +266,7 @@ EmuGopDriverBindingStart (
     goto Done;
   }
 
-  DEBUG ((DEBUG_INFO, "BHYVE GOP: Framebuf addr 0x%lx, size %x\n",
+  DEBUG ((DEBUG_INFO, "INTEL GOP: Framebuf addr 0x%lx, size %x\n",
          Private->FbAddr, Private->FbSize));
 
   Status = EmuGopConstructor (Private);
@@ -283,7 +283,7 @@ EmuGopDriverBindingStart (
                   NULL
                   );
 
-  DEBUG((DEBUG_INFO, "BHYVE framebuffer device started\n"));
+  DEBUG((DEBUG_INFO, "INTEL framebuffer device started\n"));
 
   //
   // Install int10 handler
@@ -350,7 +350,7 @@ EmuGopDriverBindingStop (
   EFI_STATUS                   Status;
   GOP_PRIVATE_DATA             *Private;
 
-  DEBUG((DEBUG_INFO, "BHYVE framebuffer device stopping\n"));
+  DEBUG((DEBUG_INFO, "INTEL framebuffer device stopping\n"));
 
   Status = gBS->OpenProtocol (
                   Handle,
@@ -485,7 +485,7 @@ BhyveGetGraphicsMode (
   *Height = BhyveRegs.Height;
   *Depth  = BhyveRegs.Depth;
 
-  DEBUG ((DEBUG_INFO, "BHYVE Get Graphics Mode: w %d, h %d\n", *Width, *Height));
+  DEBUG ((DEBUG_INFO, "INTEL Get Graphics Mode: w %d, h %d\n", *Width, *Height));
 
   ASSERT_EFI_ERROR (Status);
 }
@@ -502,7 +502,7 @@ BhyveSetGraphicsMode (
   UINT64       Offset;
   EFI_STATUS   Status;
 
-  DEBUG ((DEBUG_INFO, "BHYVE Set Graphics Mode: w %d, h %d\n", Width, Height));
+  DEBUG ((DEBUG_INFO, "INTEL Set Graphics Mode: w %d, h %d\n", Width, Height));
 
   BhyveRegs.Width  = Width;
   BhyveRegs.Height = Height;
@@ -538,6 +538,6 @@ BhyveGetMemregs (
       );
   ASSERT_EFI_ERROR (Status);
 
-  DEBUG ((DEBUG_INFO, "BHYVE Get Memregs, size %d width %d height %d\n",
+  DEBUG ((DEBUG_INFO, "INTEL Get Memregs, size %d width %d height %d\n",
          Memregs->FbSize, Memregs->Width, Memregs->Height));
 }

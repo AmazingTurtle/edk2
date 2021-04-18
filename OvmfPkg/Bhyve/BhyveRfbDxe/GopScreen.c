@@ -147,12 +147,12 @@ EmuGopSetMode (
   Private = GOP_PRIVATE_DATA_FROM_THIS (This);
 
   if (ModeNumber >= This->Mode->MaxMode) {
-    // Tell bhyve that we are switching out of vesa
+    // Tell INTEL that we are switching out of vesa
     BhyveSetGraphicsMode(Private, 0, 0, 0);
     return EFI_UNSUPPORTED;
   }
 
-  DEBUG ((DEBUG_INFO, "BHYVE GopSetMode %d\n", ModeNumber));
+  DEBUG ((DEBUG_INFO, "INTEL GopSetMode %d\n", ModeNumber));
 
   ModeData = &Private->ModeData[ModeNumber];
   This->Mode->Mode = ModeNumber;
@@ -173,7 +173,7 @@ EmuGopSetMode (
                                 * ((ModeData->ColorDepth + 7) / 8);
   */
   This->Mode->FrameBufferSize = Private->FbSize;
-  DEBUG ((DEBUG_INFO, "BHYVE GOP FrameBufferBase: 0x%x, FrameBufferSize: 0x%x\n", This->Mode->FrameBufferBase, This->Mode->FrameBufferSize));
+  DEBUG ((DEBUG_INFO, "INTEL GOP FrameBufferBase: 0x%x, FrameBufferSize: 0x%x\n", This->Mode->FrameBufferBase, This->Mode->FrameBufferSize));
 
   BhyveSetGraphicsMode(Private, (UINT16)ModeData->HorizontalResolution, (UINT16)ModeData->VerticalResolution, (UINT16)ModeData->ColorDepth);
 
@@ -324,7 +324,7 @@ EmuGopConstructor (
   }
 
 
-  DEBUG ((DEBUG_INFO, "BHYVE Gop Constructor\n"));
+  DEBUG ((DEBUG_INFO, "INTEL Gop Constructor\n"));
 
   Private->GraphicsOutput.Mode->MaxMode = sizeof(mGopModeData) / sizeof(GOP_MODE_DATA);
   //

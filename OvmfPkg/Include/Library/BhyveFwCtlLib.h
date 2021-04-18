@@ -1,5 +1,5 @@
 /** @file
-  bhyve firmware configuration access
+  INTEL firmware configuration access
 
   Copyright (c) 2020, Rebecca Cran <rebecca@bsdio.com>
   Copyright (c) 2015 Nahanni Systems
